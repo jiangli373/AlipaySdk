@@ -14,13 +14,13 @@ alipay.on('verify_fail', function(res){
 	.on('create_direct_pay_by_user_trade_finished', function(tradeResult,res){
 		//支付成功需要做的操作
 		if(res){
-			res.render('paysuccess',{result:trade});
+			res.render('paysuccess',{result:tradeResult});
 		}
 	})
 	.on('create_direct_pay_by_user_trade_success', function(tradeResult,res){
 		//支付成功需要做的操作
 		if(res){
-			res.render('paysuccess',{result:trade});
+			res.render('paysuccess',{result:tradeResult});
 		}
 	})
 	.on('user_auth_quick_login_success', function (alipayUser,res) {
