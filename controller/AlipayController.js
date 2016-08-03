@@ -4,7 +4,7 @@ alipay.on('verify_fail', function(res){
 		//鉴权失败
 		console.log('emit verify_fail');
 		if(res){
-			res.status(err.status || 500);
+			res.status(500);
 			res.render('error', {
 				message: err.message,
 				error: {}
