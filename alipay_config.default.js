@@ -6,6 +6,7 @@ var config = {
 	,cacert:'cacert.pem'//ca证书路径地址，用于curl中ssl校验
 	,transport:'http' //访问模式,根据自己的服务器是否支持ssl访问，若支持请选择https；若不支持请选择http
 	,input_charset:'utf-8'//字符编码格式 目前支持 gbk 或 utf-8
+	,is_anti_phishing_key:false //是否防止钓鱼  登录使用   如果已申请开通防钓鱼时间戳验证，这里需要设置为true
 };
 
 
