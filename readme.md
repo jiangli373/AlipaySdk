@@ -44,5 +44,5 @@
 app.js 中 require('./useAlipay').route(app); # 设置了支付宝通知路由
 
 
-useAlipay.js包装了下Alipay对象，可以再工程调用
+useAlipay.js包装了下Alipay对象，可以在工程中调用
 
