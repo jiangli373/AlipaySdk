@@ -6,7 +6,7 @@ alipay.on('verify_fail', function(res){
 		if(res){
 			res.status(500);
 			res.render('error', {
-				message: err.message,
+				message: 'verify_fail',
 				error: {}
 			});
 		}
