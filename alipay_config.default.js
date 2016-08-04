@@ -1,6 +1,7 @@
 var config = {
     partner:'' //合作身份者id，以2088开头的16位纯数字
     ,key:''//安全检验码，以数字和字母组成的32位字符
+	,seller_id:'' //卖家支付宝用户号 以2088开头的纯16位数字 也就是partner
     ,seller_email:'' //卖家支付宝帐户 必填
     ,host:'http://localhost:3000/'
 	,cacert:'cacert.pem'//ca证书路径地址，用于curl中ssl校验

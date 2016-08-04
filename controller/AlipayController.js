@@ -12,13 +12,25 @@ alipay.on('verify_fail', function(res){
 		}
 	})
 	.on('create_direct_pay_by_user_trade_finished', function(tradeResult,res){
-		//支付成功需要做的操作
+		//即时到帐支付成功需要做的操作
 		if(res){
 			res.render('paysuccess',{result:tradeResult});
 		}
 	})
 	.on('create_direct_pay_by_user_trade_success', function(tradeResult,res){
-		//支付成功需要做的操作
+		//即时到帐支付成功需要做的操作
+		if(res){
+			res.render('paysuccess',{result:tradeResult});
+		}
+	})
+	.on('alipay_wap_create_direct_pay_by_user_trade_success', function(tradeResult,res){
+		//手机网站支付成功需要做的操作
+		if(res){
+			res.render('paysuccess',{result:tradeResult});
+		}
+	})
+	.on('alipay_wap_create_direct_pay_by_user_trade_success', function(tradeResult,res){
+		//手机网站支付成功需要做的操作
 		if(res){
 			res.render('paysuccess',{result:tradeResult});
 		}
@@ -35,6 +47,17 @@ exports.create_direct_pay_by_user = function(req, res){
 		res.render('create_direct_pay_by_user');
 	}
 	else if(method == 'post'){
+
+		//页面需要传递
+		/**
+		 * out_trade_no 商户网站唯一订单号   不能为空
+		 * subject 商品的标题/交易标题/订单标题/订单关键字等  该参数最长为128个汉字    不能为空
+		 * total_fee 交易金额 单位为RMB-Yuan。取值范围为[0.01，100000000.00]，精确到小数点后两位   不能为空
+		 * show_url  商品展示网址   可以为空
+		 * body 商品描述  对一笔交易的具体描述信息 可以为空
+		 * @type {{out_trade_no: *, subject: *, total_fee: *, body: *, show_url: *}}
+		 */
+
 		var data = {
 			out_trade_no:req.body.WIDout_trade_no
 			,subject:req.body.WIDsubject
