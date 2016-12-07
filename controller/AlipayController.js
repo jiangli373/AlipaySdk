@@ -102,9 +102,9 @@ exports.alipay_wap_create_direct_pay_by_user = function(req, res){
 			,subject:req.body.WIDsubject
 			,total_fee:req.body.WIDtotal_fee
 			,body: req.body.WIDbody
-			,show_url:req.body.WIDshow_url
+			// ,show_url:req.body.WIDshow_url
 		};
-
+		console.log('====debug===',data);
 		alipay.alipay_wap_create_direct_pay_by_user(data, res);
 	}
 };
